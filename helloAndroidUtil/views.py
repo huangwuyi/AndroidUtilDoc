@@ -6,7 +6,6 @@ from django.http import HttpResponse
 
 def hello_android_util(requset):
     return render(requset, "HelloAndroidUtil.html")
-    # return HttpResponse("Hello AndroidUtil")
 
 
 def hello_android_util2(request):
