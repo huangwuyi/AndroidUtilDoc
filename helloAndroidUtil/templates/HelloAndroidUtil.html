@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hello AndroidUtil</title>
     {% load static %}
+    <title>Hello {{ projectName}} </title>
     <link rel="stylesheet" type="text/css" href="{% static 'helloAndroidUtil/bootstrap.css' %}"/>
 </head>
 <body>
 <div class="container">
     <div class="jumbotorn">
-        <h1>Hello AndroidUtil</h1>
+        <h1>Hello {{ projectName }}</h1>
         <hr/>
-        <p>This is the Doc's first Page. </p>
+        <p>This is the {{ projectName }} Doc's first Page. </p>
         <p>Since 2018-07-06 .</p>
     </div>
 </div>
