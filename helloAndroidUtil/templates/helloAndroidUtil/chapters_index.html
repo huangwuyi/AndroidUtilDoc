@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'helloAndroidUtil/bootstrap.css' %}"/>
+</head>
+<body>
+<div class=" container bg-success">
+{% if chapters_list %}
+<ul class="">
+    {% for chapter in chapters_list %}
+        <li>
+            <a class="" href="/androidUtil/chapter/{{ chapter.chapter_lsno }}">{{ chapter.chapter_name }}</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endif %}
+</div>
+</body>
+</html>
