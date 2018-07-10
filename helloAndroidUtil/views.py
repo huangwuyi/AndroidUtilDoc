@@ -8,8 +8,8 @@ from django.views import generic
 projectName = "AndroidUtil"
 
 
-def hello_android_util(requset):
-    return render(requset, "helloAndroidUtil/HelloAndroidUtil.html", {"projectName": projectName,\
+def hello_android_util(request):
+    return render(request, "helloAndroidUtil/HelloAndroidUtil.html", {"projectName": projectName,\
                                                                       "timeSince": time.strftime("%y-%m-%d %H:%M:%S", time.gmtime())})
 
 
@@ -39,6 +39,7 @@ def chapter_item_method(request, item_lsno):
                                                                          "item_method_list": item_method_list})
 
 
+# 一下两个方法仅仅是一个尝试  失败了最终
 class IndexView(generic.ListView):
     template_name = 'helloAndroidUtil/chapter_index.html'
     context_object_name = 'chapters_list'
