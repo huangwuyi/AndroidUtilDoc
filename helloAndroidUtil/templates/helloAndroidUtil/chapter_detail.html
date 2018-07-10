@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'helloAndroidUtil/bootstrap.css' %}">
+</head>
+<body>
+<div class="container">
+    <div class="jumbotorn">
+        {% if chapter %}
+        <h1>第{{ chapter.chapter_lsno  }}章  {{ chapter.chapter_name }}</h1>
+        {% endif %}
+    </div>
+    <ol>
+        {% if chapter_item_list %}
+        {% for chapter_item in chapter_item_list %}
+        <li>
+            <a class="" href="/androidUtil/chapter/item/{{ chapter_item.item_lsno }}">{{ chapter_item.item_lsno }}{{ chapter_item.item_name }}</a>
+            <p> {{ chapter_item.item_descripe }} </p>
+        </li>
+        {% endfor %}
+        {% endif %}
+    </ol>
+</div>
+</body>
+</html>

@@ -6,6 +6,7 @@ from django.db import models
 class Chapter(models.Model):
     chapter_name = models.CharField(max_length=200)
     chapter_lsno = models.IntegerField()
+
     def __str__(self):
         return str(self.chapter_lsno) + " - " + str(self.chapter_name)
 
@@ -28,3 +29,13 @@ class ItemMethod(models.Model):
 
     def __str__(self):
         return str(self.method_lsno) + " - " + str(self.method_name)
+
+
+class MethonParameter(models.Model):
+    parameter_lsno = models.IntegerField()
+    parameter_type = models.CharField(max_length=200)
+    parameter_name = models.CharField(max_length=200)
+    itemMethod = models.ForeignKey(ItemMethod, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return str(self.parameter_lsno) + " - " + str(self.parameter_type) + " - " + str(self.parameter_name)

@@ -12,7 +12,7 @@
 <ul class="">
     {% for chapter in chapters_list %}
         <li>
-            <a class="" href="/androidUtil/chapter/{{ chapter.chapter_lsno }}">{{ chapter.chapter_name }}</a>
+            <a class="" href="/androidUtil/chapter/{{ chapter.chapter_lsno }}">第 <strong>{{ chapter.chapter_lsno }}</strong> 章  {{ chapter.chapter_name }}</a>
         </li>
     {% endfor %}
 </ul>

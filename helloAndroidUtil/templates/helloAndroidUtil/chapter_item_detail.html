@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'helloAndroidUtil/bootstrap.css' %}">
+</head>
+<body>
+<div class="container">
+    <div class="jumbotorn">
+        {% if chapter_item %}
+        <h1>第{{ chapter_item.item_lsno  }}章  {{ chapter_item.item_name }}</h1>
+        {% endif %}
+    </div>
+    <ol>
+        {% if item_method_list %}
+        {% for item_method in item_method_list %}
+        <li>
+            <strong>{{ item_method.method_name }}(
+                {% for parameter in item_method.parameters %}
+                {{ parameter.parameter_type }}: {{ parameter.parameter_name}},
+                {% endfor %}
+                )</strong>
+            <p> {{ item_method.method_descripe }} </p>
+        </li>
+        {% endfor %}
+        {% endif %}
+    </ol>
+
+</div>
+</body>
+</html>
