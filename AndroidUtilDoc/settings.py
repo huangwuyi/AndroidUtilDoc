@@ -53,7 +53,8 @@ ROOT_URLCONF = 'AndroidUtilDoc.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, "helloAndroidUtil/templates")],
+        'DIRS': [os.path.join(BASE_DIR, "helloAndroidUtil/templates"),
+                 os.path.join(BASE_DIR, "templates"), ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

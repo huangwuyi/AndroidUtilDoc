@@ -3,15 +3,14 @@ from django.http import HttpResponse
 import time
 from .models import Chapter, ChapterItem, ItemMethod, MethonParameter
 from django.template import loader
-
+from django.views import generic
 # Create your views here.
 projectName = "AndroidUtil"
 
 
 def hello_android_util(requset):
-    return render(requset, "helloAndroidUtil/HelloAndroidUtil.html", {"projectName": projectName, \
-                                                                      "timeSince": time.strftime("%y-%m-%d %H:%M:%S",
-                                                                                                 time.gmtime())})
+    return render(requset, "helloAndroidUtil/HelloAndroidUtil.html", {"projectName": projectName,\
+                                                                      "timeSince": time.strftime("%y-%m-%d %H:%M:%S", time.gmtime())})
 
 
 def chapter(request):
@@ -36,5 +35,16 @@ def chapter_item_method(request, item_lsno):
     item_method_list = ItemMethod.objects.filter(chapter_item=chapter_item)
     for item_method in item_method_list:
         item_method.parameters = MethonParameter.objects.filter(itemMethod_id=item_method.id)
-    return render(request, "helloAndroidUtil/chapter_item_detail.html", {"chapter_item": chapter_item,\
+    return render(request, "helloAndroidUtil/chapter_item_detail.html", {"chapter_item": chapter_item, \
                                                                          "item_method_list": item_method_list})
+
+
+class IndexView(generic.ListView):
+    template_name = 'helloAndroidUtil/chapter_index.html'
+    context_object_name = 'chapters_list'
+    queryset = Chapter.objects.all()
+
+
+class DetaiView(generic.DetailView):
+    template_name = "helloAndroidUtil/chapter_detail.html"
+    model = Chapter
