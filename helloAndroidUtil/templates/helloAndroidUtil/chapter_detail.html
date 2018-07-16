@@ -11,13 +11,16 @@
     <div class="jumbotorn">
         {% if chapter %}
         <h1>第{{ chapter.chapter_lsno  }}章  {{ chapter.chapter_name }}</h1>
+        <h2>{{ chapter.chapter_descripe }}</h2>
         {% endif %}
     </div>
     <ol>
         {% if chapter_item_list %}
+        <br/>
+        <p class="bold bg-primary">包含如下的类：</p>
         {% for chapter_item in chapter_item_list %}
-        <li>
-            <a class="" href="/androidUtil/chapter/item/{{ chapter_item.item_lsno }}">{{ chapter_item.item_lsno }}{{ chapter_item.item_name }}</a>
+        <li class="bg-success">
+            <a class="" href="/androidUtil/chapter/{{ chapter.chapter_lsno }}/{{ chapter_item.item_lsno }}">{{ chapter_item.item_lsno }}{{ chapter_item.item_name }}</a>
             <p> {{ chapter_item.item_descripe }} </p>
         </li>
         {% endfor %}

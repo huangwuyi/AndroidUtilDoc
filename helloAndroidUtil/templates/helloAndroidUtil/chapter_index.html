@@ -8,15 +8,17 @@
 </head>
 <body>
 <div class=" container bg-success">
-{% if chapters_list %}
-<ul class="">
-    {% for chapter in chapters_list %}
+    {% if chapters_list %}
+    <ul class="">
+        {% for chapter in chapters_list %}
         <li>
-            <a class="" href="/androidUtil/chapter/{{ chapter.chapter_lsno }}">第 <strong>{{ chapter.chapter_lsno }}</strong> 章  {{ chapter.chapter_name }}</a>
+            <a class="" href="/androidUtil/chapter/{{ chapter.chapter_lsno }}"><h1> 第 <strong>
+                {{ chapter.chapter_lsno }}</strong> 章 {{ chapter.chapter_name }}</h1></a>
+            <p class="">{{ chapter.chapter_descripe }}</p>
         </li>
-    {% endfor %}
-</ul>
-{% endif %}
+        {% endfor %}
+    </ul>
+    {% endif %}
 </div>
 </body>
 </html>

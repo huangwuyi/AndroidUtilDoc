@@ -9,20 +9,34 @@
 <body>
 <div class="container">
     <div class="jumbotorn">
-        {% if chapter_item %}
-        <h1>第{{ chapter_item.item_lsno  }}章  {{ chapter_item.item_name }}</h1>
-        {% endif %}
+        {% if chapter %}
+        <h1><a href="/androidUtil/chapter/{{chapter.chapter_lsno}}">第{{ chapter.chapter_lsno }}章
+            {{ chapter.chapter_name}}</a>
+            {% endif %}
+            {% if chapter_item %}
+            <small>第{{ chapter_item.item_lsno }}个类 {{ chapter_item.item_name }}</small>
+            {% endif %}
+        </h1>
     </div>
     <ol>
         {% if item_method_list %}
         {% for item_method in item_method_list %}
-        <li>
+        <li class="text-info bg-info">
             <strong>{{ item_method.method_name }}(
                 {% for parameter in item_method.parameters %}
                 {{ parameter.parameter_type }}: {{ parameter.parameter_name}},
                 {% endfor %}
                 )</strong>
             <p> {{ item_method.method_descripe }} </p>
+            <em>参数描述</em>
+            <ul class="bg-primary">
+                {% for parameter in item_method.parameters %}
+                <li>
+                    {{ parameter.parameter_type }}类型的 {{ parameter.parameter_name}} 参数：<br/>
+                    {{ parameter.parameter_descripe }}
+                </li>
+                {% endfor %}
+            </ul>
         </li>
         {% endfor %}
         {% endif %}
