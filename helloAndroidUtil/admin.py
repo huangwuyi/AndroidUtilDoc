@@ -15,10 +15,14 @@ class ChapterAdmin(admin.ModelAdmin):
     fieldsets = [('章节名称', {'fields': ['chapter_name', 'chapter_descripe']}),
                  ('章节序号', {'fields': ['chapter_lsno']}),
                  (
-                 '包含类', {'classes': ['collapse'], 'description': '描述设想是在这里显示包含的类的一个列表，可以增加添加操作。', 'fields': []})
+                     '包含类', {'classes': ['collapse'], 'description': '描述设想是在这里显示包含的类的一个列表，可以增加添加操作。', 'fields': []})
                  ]
     # filter_horizontal = ['chapter_lsno']
     list_filter = ['chapter_name', 'chapter_descripe']
+    ordering = ['chapter_lsno']
+    list_display = ['chapter_lsno', 'chapter_name', 'chapter_descripe', "__str__"]
+
+
 
 
 admin.site.register(Chapter, ChapterAdmin)
