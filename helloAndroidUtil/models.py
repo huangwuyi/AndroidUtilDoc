@@ -8,6 +8,8 @@ class Chapter(models.Model):
     chapter_lsno = models.IntegerField()
     chapter_descripe = models.TextField()
 
+    # chapter_items = models..OneToOneRel()
+
     # .CharField(max_length=2000)
 
     def __str__(self):

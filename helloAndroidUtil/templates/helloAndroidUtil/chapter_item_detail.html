@@ -30,12 +30,16 @@
             <p> {{ item_method.method_descripe }} </p>
             <em>参数描述</em>
             <ul class="bg-primary">
+                {% if item_method.parameters %}
                 {% for parameter in item_method.parameters %}
                 <li>
                     {{ parameter.parameter_type }}类型的 {{ parameter.parameter_name}} 参数：<br/>
                     {{ parameter.parameter_descripe }}
                 </li>
                 {% endfor %}
+                {% else %}
+                <li>无参数</li>
+                {% endif %}
             </ul>
         </li>
         {% endfor %}
