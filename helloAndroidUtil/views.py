@@ -33,7 +33,7 @@ def chapter_item(request, chapter_lsno):
 
 def chapter_item_method(request, chapter_lsno, item_lsno):
     chapter = Chapter.objects.get(chapter_lsno=chapter_lsno)
-    chapter_item = ChapterItem.objects.get(item_lsno=item_lsno)
+    chapter_item = ChapterItem.objects.get(id=item_lsno)
     # item_method_list = ItemMethod.objects.filter(chapter_item_id=chapter_item.id)
     item_method_list = ItemMethod.objects.filter(chapter_item=chapter_item)
     for item_method in item_method_list:
