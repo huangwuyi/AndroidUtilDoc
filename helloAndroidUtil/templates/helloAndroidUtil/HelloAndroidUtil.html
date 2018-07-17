@@ -12,9 +12,22 @@
         <h1>Hello {{ projectName }}</h1>
         <a class="btn btn-primary" href="/androidUtil/chapter">go Chapter List>></a>
         <p>for my coming son</p>
+        <br/>
+        <div class="text-left">
+            <ul>
+                <li><a target="_blank" class="text-warning" href="http://www.cnblogs.com/huangwuyi/">个人博客--博客园</a></li>
+                <li><a target="_blank" class="text-warning" href="https://github.com/huangwuyi/AndroidUntil/">开源地址--GitHub</a></li>
+            </ul>
+        </div>
         <hr/>
         <p>This is the {{ projectName }} Doc's first Page. </p>
-        <p>Since 2018-07-06 .{{timeSince}}</p>
+        <p>Since 2018-07-06
+            {% if hiddenTime %}
+            {{timeSince}}
+            {% endif %}
+        </p>
+        <hr/>
+
     </div>
 </div>
 </body>
