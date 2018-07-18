@@ -7,16 +7,16 @@
     <link rel="stylesheet" type="text/css" href="{% static 'helloAndroidUtil/bootstrap.css' %}"/>
 </head>
 <body>
-<div class=" container bg-success">
-    <div>
-        <h1>AndroidUtil<small><a href="/androidUtil/"> Home </a></small></h1>
+<div class=" container ">
+    <div class="text-center">
+        <h1 class="display1">AndroidUtil<small><a href="/androidUtil/"> Home </a></small></h1>
     </div>
     {% if chapters_list %}
-    <ul class="">
+    <ul class="list-group">
         {% for chapter in chapters_list %}
-        <li>
-            <a class="" href="/androidUtil/chapter/{{ chapter.chapter_lsno }}"><h1> 第 <strong>
-                {{ chapter.chapter_lsno }}</strong> 章 {{ chapter.chapter_name }}</h1></a>
+        <li class="list-group-item list-group-item-primary">
+            <a class="" href="/androidUtil/chapter/{{ chapter.chapter_lsno }}"><h5> 第 <strong>
+                {{ chapter.chapter_lsno }}</strong> 章 {{ chapter.chapter_name }}</h5></a>
             <p class="">{{ chapter.chapter_descripe }}</p>
         </li>
         {% endfor %}

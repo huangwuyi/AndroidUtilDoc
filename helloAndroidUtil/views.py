@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import time
-from .models import Chapter, ChapterItem, ItemMethod, MethodParameter
+from .models import Chapter, ChapterItem, ItemMethod, MethodParameter, MethodResult
 from django.template import loader
 from django.views import generic
 
@@ -36,8 +36,13 @@ def chapter_item_method(request, chapter_lsno, item_lsno):
     chapter_item = ChapterItem.objects.get(id=item_lsno)
     # item_method_list = ItemMethod.objects.filter(chapter_item_id=chapter_item.id)
     item_method_list = ItemMethod.objects.filter(chapter_item=chapter_item)
+
     for item_method in item_method_list:
         item_method.parameters = MethodParameter.objects.filter(itemMethod_id=item_method.id)
+        try:
+            item_method.method_result = MethodResult.objects.get(item_method_id=item_method.id)
+        except:
+            item_method.method_result = {"result_type": "尚未维护", "result_descripe": "尚未维护"}
     return render(request, "helloAndroidUtil/chapter_item_detail.html", {"chapter_item": chapter_item, \
                                                                          "item_method_list": item_method_list, \
                                                                          "chapter": chapter})

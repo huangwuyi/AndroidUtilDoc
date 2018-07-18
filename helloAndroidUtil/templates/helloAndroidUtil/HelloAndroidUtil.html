@@ -8,26 +8,37 @@
 </head>
 <body>
 <div class="container">
-    <div class="jumbotorn">
-        <h1>Hello {{ projectName }}</h1>
+    <div class="jumbotorn ">
+        <h1 class="text-left">Hello {{ projectName }}</h1>
+        <p>{{ projectName }} is a library for Android develop, it's build in my work time, only for solving some problem
+            I meet when I develop my first Android program.
+            For future develop, I create this library, write this document, you can find the source code in my
+            github.And I put it in jitpack, you can use it by gradle.</p>
         <a class="btn btn-primary" href="/androidUtil/chapter">go Chapter List>></a>
-        <p>for my coming son</p>
         <br/>
-        <div class="text-left">
-            <ul>
-                <li><a target="_blank" class="text-warning" href="http://www.cnblogs.com/huangwuyi/">个人博客--博客园</a></li>
-                <li><a target="_blank" class="text-warning" href="https://github.com/huangwuyi/AndroidUntil/">开源地址--GitHub</a></li>
-            </ul>
-        </div>
         <hr/>
-        <p>This is the {{ projectName }} Doc's first Page. </p>
+        <p>This is the {{ projectName }} Doc's first Page.Just for my coming son</p>
         <p>Since 2018-07-06
             {% if hiddenTime %}
             {{timeSince}}
             {% endif %}
         </p>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Maybe you need......
+            </div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-success"><a target="_blank" class="text-warning"
+                                                                           href="http://www.cnblogs.com/huangwuyi/">个人博客--博客园</a>
+                    </li>
+                    <li class="list-group-item list-group-item-info"><a target="_blank" class="text-warning"
+                                                                        href="https://github.com/huangwuyi/AndroidUntil/">开源地址--GitHub</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
         <hr/>
-
     </div>
 </div>
 </body>
