@@ -67,5 +67,5 @@ class SomeTangshi(models.Model):
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=200)
     text = models.TextField()
-    remark = models.TextField()
+    remark_tang = models.TextField()
     oper = models.CharField(max_length=200)
