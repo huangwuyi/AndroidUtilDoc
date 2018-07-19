@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import time
-from .models import Chapter, ChapterItem, ItemMethod, MethodParameter, MethodResult
+from .models import Chapter, ChapterItem, ItemMethod, MethodParameter, MethodResult, SomeTangshi
 from django.template import loader
 from django.views import generic
 
@@ -46,6 +46,16 @@ def chapter_item_method(request, chapter_lsno, item_lsno):
     return render(request, "helloAndroidUtil/chapter_item_detail.html", {"chapter_item": chapter_item, \
                                                                          "item_method_list": item_method_list, \
                                                                          "chapter": chapter})
+
+
+def tang_list(request):
+    sometangshi = SomeTangshi.objects.all()
+    return render(request, "helloAndroidUtil/tang_list.html", {"tang_list": sometangshi})
+
+
+def tang_item(request, id):
+    tang = SomeTangshi.objects.get(id=id)
+    return render(request, "helloAndroidUtil/tang_item.html", {"tang": tang})
 
 
 # 一下两个方法仅仅是一个尝试  失败了最终

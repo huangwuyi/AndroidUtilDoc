@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Chapter, ChapterItem, ItemMethod, MethodParameter, MethodResult
+from .models import Chapter, ChapterItem, ItemMethod, MethodParameter, MethodResult, SomeTangshi
 
 # 通过再次注册模型，Django能够快速构建一个默认的表单用于展示。
 
@@ -41,8 +41,13 @@ class MethodResultAdmin(admin.ModelAdmin):
     list_filter = ['item_method']
 
 
+class TangShiAdmin(admin.ModelAdmin):
+    list_filter = ['author']
+
+
 admin.site.register(Chapter, ChapterAdmin)
 admin.site.register(ChapterItem,  ChapterItemAdmin)
 admin.site.register(ItemMethod, ItemMethodAdmin)
 admin.site.register(MethodParameter, MethodParameterAdmin)
 admin.site.register(MethodResult, MethodResultAdmin)
+admin.site.register(SomeTangshi, TangShiAdmin)
