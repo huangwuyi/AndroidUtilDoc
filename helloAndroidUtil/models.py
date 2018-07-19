@@ -64,6 +64,7 @@ class MethodResult(models.Model):
 
 
 class SomeTangshi(models.Model):
-    title=models.CharField(max_length=200)
-    author=models.CharField(max_length=200)
-    text=models.TextField()
+    title = models.CharField(max_length=200)
+    author = models.CharField(max_length=200)
+    text = models.TextField()
+    remark = models.TextField()
