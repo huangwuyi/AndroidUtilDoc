@@ -68,3 +68,4 @@ class SomeTangshi(models.Model):
     author = models.CharField(max_length=200)
     text = models.TextField()
     remark = models.TextField()
+    oper = models.CharField(max_length=200)
