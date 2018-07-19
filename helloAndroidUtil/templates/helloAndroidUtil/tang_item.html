@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <title>Hello {{ projectName}} </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'helloAndroidUtil/bootstrap.css' %}"/>
+</head>
+<body>
+<div class="container">
+    <div class="jumbotorn">
+        <h1>唐诗详细<a href="/androidUtil/tang/"><small>返回</small></a></h1>
+    </div>
+    <div class="panel panel-primary">
+        {% if tang %}
+        <div class="panel-heading">
+            <h1>{{ tang.title }} <small class="text-white"> {{ tang.author }} </small></h1>
+        </div>
+        <div class="panel-body">
+            {{ tang.text }}
+        </div>
+        <div class="panel-footer">
+            {{ tang.remark_tang }}
+        </div>
+        {% endif %}
+    </div>
+</div>
+</body>
+</html>

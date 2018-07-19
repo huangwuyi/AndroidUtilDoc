@@ -61,3 +61,11 @@ class MethodResult(models.Model):
 
     def __str__(self):
         return str(self.result_lsno) + " - " + self.result_type + " - " + self.result_descripe;
+
+
+class SomeTangshi(models.Model):
+    title = models.CharField(max_length=200)
+    author = models.CharField(max_length=200)
+    text = models.TextField()
+    remark_tang = models.TextField()
+    oper = models.CharField(max_length=200)
