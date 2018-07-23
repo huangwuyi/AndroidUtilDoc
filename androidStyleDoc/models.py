@@ -4,7 +4,7 @@ from django.db import models
 class HuangwuyiStyle(models.Model):
     style_name = models.CharField(max_length=200)
     style_descripe = models.TextField()
-    style_example = models.ImageField()
+    style_example = models.ImageField(upload_to='androidStyleDoc/static/androidStyleDoc/images/')
 
 
 
