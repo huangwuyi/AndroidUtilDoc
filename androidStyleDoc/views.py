@@ -8,4 +8,3 @@ def hello(request):
     # my_response.content = "hello from androidStyleDoc"
     # return my_response
     return render(request, "helloAndroidStyle.html")
-    # return render(request, "hello from androidStyleDoc")
