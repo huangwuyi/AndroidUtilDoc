@@ -19,5 +19,7 @@ from helloAndroidUtil import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('androidUtil/', include("helloAndroidUtil.urls"))
+    path('androidUtil/', include("helloAndroidUtil.urls")),
+    path('androidStyle/', include("androidStyleDoc.urls"))
+
 ]
