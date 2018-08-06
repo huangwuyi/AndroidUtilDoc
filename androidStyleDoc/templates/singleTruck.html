@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'helloAndroidUtil/bootstrap.css' %}">
+</head>
+<body>
+<div class="container">
+    <div class="jumbotron">
+        <h1>单车信息查询</h1>
+    </div>
+    <ul class="">
+        {% if dict_post %}
+        {% for item in dict_post %}
+        <li>{{ item.key }} :{{ item.value }}</li>
+        {% endfor %}
+        {% endif %}
+    </ul>
+    <ul class="">
+        {% if dict_cookies %}
+        {% for item in dict_cookies %}
+        <li>{{ item.key }} :{{ item.value }}</li>
+        {% endfor %}
+        {% endif %}
+    </ul>
+</div>
+</body>
+</html>

@@ -18,6 +18,7 @@ from django.urls import path, include
 from helloAndroidUtil import views
 
 urlpatterns = [
+    path('', views.hello_android_util),
     path('admin/', admin.site.urls),
     path('androidUtil/', include("helloAndroidUtil.urls")),
     path('androidStyle/', include("androidStyleDoc.urls"))

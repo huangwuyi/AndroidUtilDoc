@@ -16,7 +16,7 @@ def hello_android_util(request):
 
 
 def chapter(request):
-    chapter_list = Chapter.objects.all()
+    chapter_list = Chapter.objects.all().order_by('chapter_lsno')
     template = loader.get_template('helloAndroidUtil/chapter_index.html')
     context = {
         'chapters_list': chapter_list
@@ -26,7 +26,7 @@ def chapter(request):
 
 def chapter_item(request, chapter_lsno):
     chapter = Chapter.objects.get(chapter_lsno=chapter_lsno)
-    chapter_item_list = ChapterItem.objects.filter(chapter_id=chapter_lsno)
+    chapter_item_list = ChapterItem.objects.filter(chapter_id=chapter.id)
     return render(request, "helloAndroidUtil/chapter_detail.html",
                   {"chapter": chapter, "chapter_item_list": chapter_item_list})
 

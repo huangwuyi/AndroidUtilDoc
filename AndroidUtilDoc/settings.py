@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'mod_wsgi.server',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +57,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, "helloAndroidUtil/templates"),
                  os.path.join(BASE_DIR, "templates"),
-                 os.path.join(BASE_DIR, "androidStyleDoc/templates"),],
+                 os.path.join(BASE_DIR, "androidStyleDoc/templates"), ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

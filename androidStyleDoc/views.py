@@ -10,5 +10,12 @@ def hello(request):
     # return my_response
     styles = HuangwuyiStyle.objects.all()
     for style in styles:
-        style.style_example_short = str(style.style_example)[(str(style.style_example)).rindex('/')+1:]
+        style.style_example_short = str(style.style_example)[(str(style.style_example)).rindex('/') + 1:]
     return render(request, "helloAndroidStyle.html", {"styles": styles})
+
+
+def single_truck(request):
+    dict_post = request.POST
+    dict_cookies = request.COOKIES
+    return render(request, "singleTruck.html", {"dict_post": dict_post, \
+                                                "dict_cookies": dict_cookies})
