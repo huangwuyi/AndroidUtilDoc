@@ -24,7 +24,7 @@ SECRET_KEY = 'rg(3!969e+9d(fjcc4v(m6f9a@%ea9s61^h)t)^qd_*e54#r14'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.test.com:8099', '10.2.42.66:8099', '127.0.0.1', 'www.test.com', '*']
 
 # Application definition
 
@@ -82,9 +82,17 @@ DATABASES = {
         # django.db.backends.mysql
         # django.db.backends.oracle
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    },
+    'mssql': {
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': 'Soufang',
+        'HOST': '10.2.42.66\MSDB',
+        'USER': 'sa',
+        'PASSWORD': '123456',
     }
 }
 
+# DATABASE_ROUTERS = ['AndroidUtilDoc.database_router.MssqlDatabaseRouter']
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
 
@@ -126,3 +134,6 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "androidStyleDoc/static/"),
     # os.path.join(BASE_DIR, 'static/')
 )
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "androidStyleDoc\\images").replace('\\', '/')
+MEDIA_URL = '/media/'

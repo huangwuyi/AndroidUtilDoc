@@ -16,12 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from helloAndroidUtil import views
+from androidStyleDoc import views as v2
 
 urlpatterns = [
     path('', views.hello_android_util),
     path('admin/', admin.site.urls),
     path('androidUtil/', include("helloAndroidUtil.urls")),
-    path('androidStyle/', include("androidStyleDoc.urls"))
+    path('androidStyle/', include("androidStyleDoc.urls")),
+    path('media/<path:directory>/', v2.image_view),
     # path('images/',)
 
 ]

@@ -10,13 +10,13 @@
 <div class="container">
     <div class="jumbotron">
         {% if chapter %}
-        <h1 class="text-center"><a href="/androidUtil/chapter/{{chapter.chapter_lsno}}">第{{ chapter.chapter_lsno }}章
+        <h4 class="text-center"><a href="/androidUtil/chapter/{{chapter.chapter_lsno}}">第{{ chapter.chapter_lsno }}章
             {{ chapter.chapter_name}}</a>
             {% endif %}
             {% if chapter_item %}
             <small>第{{ chapter_item.item_lsno }}个类 {{ chapter_item.item_name }}</small>
             {% endif %}
-        </h1>
+        </h4>
     </div>
     <ol>
         {% if item_method_list %}
